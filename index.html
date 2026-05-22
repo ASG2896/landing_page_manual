@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psicología Oscura de la Seducción Masculina | Seducción Empírica</title>
+<meta name="description" content="La guía definitiva sobre la mente femenina desde la biología, la psicología y la neurociencia. El conocimiento que nadie te recomendará pero todo hombre necesita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Raleway:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#080808;--black2:#111111;--black3:#1a1a1a;--black4:#222222;
+  --red:#8B0000;--red-mid:#a01010;--red-light:#C0392B;--red-bright:#e74c3c;
+  --white:#ffffff;--white-soft:#f0f0f0;--white-muted:#cccccc;
+  --gray:#888888;--gray-light:#aaaaaa;
+  --serif:'Playfair Display',Georgia,serif;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --sans:'Raleway','Helvetica Neue',Arial,sans-serif;
+  --glow:0 0 24px rgba(139,0,0,.5),0 0 48px rgba(139,0,0,.2);
+  --glow-strong:0 0 32px rgba(192,57,43,.7),0 0 64px rgba(139,0,0,.4);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--black);color:var(--white);font-family:var(--sans);font-weight:400;line-height:1.7;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── TYPOGRAPHY ── */
+.serif{font-family:var(--serif)}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.section-label{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--red-light);display:block;margin-bottom:14px}
+.divider{width:60px;height:2px;background:linear-gradient(90deg,var(--red),transparent);margin:20px 0}
+.divider.center{margin:20px auto;background:linear-gradient(90deg,transparent,var(--red),transparent);width:120px}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-36px);transition:opacity .8s ease,transform .8s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(36px);transition:opacity .8s ease,transform .8s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+
+/* ── BUTTONS ── */
+.btn{display:inline-block;font-family:var(--sans);font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border:none;position:relative;overflow:hidden;transition:all .3s ease}
+.btn-red{background:linear-gradient(135deg,var(--red),var(--red-light));color:var(--white);padding:18px 42px;font-size:13px}
+.btn-red::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(135deg,var(--red-light),var(--red-bright));transition:left .3s ease;z-index:0}
+.btn-red:hover::before{left:0}
+.btn-red:hover{box-shadow:var(--glow-strong);transform:translateY(-2px)}
+.btn-red span,.btn-red{position:relative;z-index:1}
+.btn-lg{padding:22px 54px;font-size:14px;letter-spacing:3px}
+.btn-white{background:var(--white);color:var(--red);padding:20px 48px;font-size:13px}
+.btn-white:hover{background:var(--black);color:var(--white);box-shadow:0 0 28px rgba(0,0,0,.6)}
+
+/* ── PARTICLES ── */
+#particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.35}
+
+/* ── NAV ── */
+#main-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:all .4s ease}
+#main-nav.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(12px);padding:12px 0;border-bottom:1px solid rgba(139,0,0,.25)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo img{height:46px;width:auto}
+.nav-cta{display:none}
+#main-nav.scrolled .nav-cta{display:inline-block}
+
+/* ── HERO ── */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 90px;z-index:1;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 68% 50%,rgba(139,0,0,.18) 0%,transparent 60%),radial-gradient(ellipse at 25% 85%,rgba(139,0,0,.08) 0%,transparent 50%);z-index:0}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to bottom,transparent,var(--black));z-index:1}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--red-light);margin-bottom:18px;display:flex;align-items:center;gap:12px;animation:hFadeUp .8s ease .2s both}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--red-light);display:inline-block}
+.hero-title{font-family:var(--serif);font-size:clamp(34px,5vw,60px);font-weight:900;line-height:1.1;margin-bottom:22px;color:var(--white);animation:hFadeUp .9s ease .4s both}
+.hero-title em{font-style:italic;color:var(--red-light)}
+.hero-subtitle{font-size:16px;color:var(--white-muted);line-height:1.85;margin-bottom:34px;max-width:480px;font-weight:300;animation:hFadeUp .8s ease .6s both}
+.hero-price{display:flex;align-items:center;gap:14px;margin-bottom:30px;flex-wrap:wrap;animation:hFadeUp .8s ease .75s both}
+.price-old{font-size:20px;color:var(--gray);text-decoration:line-through;font-family:var(--serif)}
+.price-new{font-size:50px;font-weight:900;color:var(--white);font-family:var(--serif);line-height:1}
+.price-badge{background:var(--red);color:var(--white);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;align-self:center}
+.hero-btn{animation:hFadeUp .8s ease .9s both;display:inline-block}
+.hero-guarantee{font-size:12px;color:var(--gray);margin-top:14px;letter-spacing:.5px;animation:hFadeUp .7s ease 1.1s both}
+.hero-guarantee span{color:var(--gray-light)}
+
+/* Book */
+.hero-book{display:flex;justify-content:center;align-items:center;animation:hFadeUp 1.1s ease .3s both}
+.book-wrapper{position:relative;display:inline-block}
+.book-wrapper::before{content:'';position:absolute;inset:-30px;background:radial-gradient(ellipse,rgba(139,0,0,.3) 0%,transparent 70%);z-index:0;border-radius:50%}
+.book-wrapper img{position:relative;z-index:1;max-width:300px;width:100%;filter:drop-shadow(0 20px 60px rgba(0,0,0,.85)) drop-shadow(0 0 30px rgba(139,0,0,.3));transform:perspective(900px) rotateY(-7deg) rotateX(2deg);transition:transform .7s ease}
+.book-wrapper:hover img{transform:perspective(900px) rotateY(-2deg) rotateX(1deg) scale(1.03)}
+
+@keyframes hFadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── PROBLEM ── */
+#problem{position:relative;z-index:1;padding:100px 0;background:var(--black2);border-top:1px solid rgba(139,0,0,.12);border-bottom:1px solid rgba(139,0,0,.12)}
+.problem-intro{max-width:680px;margin:0 auto;text-align:center;margin-bottom:64px}
+.problem-intro h2{font-family:var(--serif);font-size:clamp(26px,4vw,46px);font-weight:700;line-height:1.2;margin-bottom:20px}
+.problem-intro p{color:var(--gray-light);font-size:17px;line-height:1.85}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(139,0,0,.08)}
+.pain-item{background:var(--black2);padding:34px 26px;position:relative;overflow:hidden;transition:background .3s ease}
+.pain-item::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--red);transition:height .4s ease}
+.pain-item:hover::before{height:100%}
+.pain-item:hover{background:var(--black3)}
+.pain-icon{font-size:26px;margin-bottom:14px}
+.pain-item h3{font-family:var(--serif);font-size:17px;margin-bottom:9px;color:var(--white-soft)}
+.pain-item p{font-size:14px;color:var(--gray);line-height:1.7}
+.problem-quote{max-width:660px;margin:64px auto 0;padding:40px;border:1px solid rgba(139,0,0,.2);position:relative;text-align:center}
+.problem-quote::before,.problem-quote::after{content:'';position:absolute;width:28px;height:28px;border-color:var(--red);border-style:solid}
+.problem-quote::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.problem-quote::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.problem-quote p{font-family:var(--serif);font-size:19px;font-style:italic;line-height:1.75;color:var(--white-soft)}
+.problem-quote p strong{color:var(--red-light);font-style:normal}
+
+/* ── SOLUTION ── */
+#solution{position:relative;z-index:1;padding:110px 0}
+.solution-header{text-align:center;margin-bottom:72px}
+.solution-header h2{font-family:var(--serif);font-size:clamp(26px,4vw,46px);font-weight:700;line-height:1.2;margin-bottom:18px}
+.solution-header p{color:var(--gray-light);font-size:17px;max-width:580px;margin:0 auto}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(139,0,0,.08)}
+.pillar{background:var(--black);padding:48px 34px;position:relative;overflow:hidden;transition:background .3s ease}
+.pillar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent);transform:scaleX(0);transition:transform .4s ease}
+.pillar:hover::after{transform:scaleX(1)}
+.pillar:hover{background:var(--black2)}
+.pillar-number{font-family:var(--display);font-size:88px;font-weight:300;color:rgba(139,0,0,.1);position:absolute;top:12px;right:16px;line-height:1}
+.pillar-icon{width:54px;height:54px;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:26px;font-size:22px;color:var(--red-light);position:relative;z-index:1}
+.pillar h3{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:7px;color:var(--white)}
+.pillar-tag{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red-light);margin-bottom:14px;display:block}
+.pillar p{font-size:14px;color:var(--gray-light);line-height:1.8}
+.pillar-points{list-style:none;margin-top:18px}
+.pillar-points li{font-size:13px;color:var(--gray);padding:6px 0 6px 16px;border-bottom:1px solid rgba(255,255,255,.04);position:relative}
+.pillar-points li::before{content:'—';position:absolute;left:0;color:var(--red)}
+
+/* ── LEARN ── */
+#learn{position:relative;z-index:1;padding:110px 0;background:var(--black2)}
+.learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.learn-header h2{font-family:var(--serif);font-size:clamp(26px,3.5vw,42px);font-weight:700;line-height:1.2;margin-bottom:18px}
+.learn-header p{color:var(--gray-light);font-size:16px;line-height:1.8;margin-bottom:30px}
+.benefits-list{list-style:none}
+.benefits-list li{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.05);align-items:flex-start}
+.bcheck{width:20px;height:20px;min-width:20px;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;margin-top:2px;font-size:10px;color:var(--red-light)}
+.benefits-list li span{font-size:15px;color:var(--white-muted);line-height:1.65}
+.learn-side{display:flex;flex-direction:column;align-items:center;gap:28px;position:sticky;top:100px}
+.learn-side img{max-width:240px;filter:drop-shadow(0 14px 40px rgba(0,0,0,.75))}
+.learn-cta-box{width:100%;padding:30px;border:1px solid rgba(139,0,0,.28);text-align:center;background:rgba(139,0,0,.05)}
+.learn-cta-box .price-old{font-size:16px}
+.learn-cta-box .price-new{font-size:40px;display:block;margin:4px 0 10px}
+.learn-cta-box .btn-red{width:100%;text-align:center;display:block;margin-bottom:10px}
+.learn-cta-box small{font-size:12px;color:var(--gray)}
+
+/* ── MID CTA ── */
+#mid-cta{position:relative;z-index:1;padding:80px 0;background:linear-gradient(135deg,var(--red) 0%,var(--red-mid) 50%,#5a0000 100%);overflow:hidden;text-align:center}
+#mid-cta::before{content:'';position:absolute;top:-40%;left:-8%;width:55%;height:180%;background:rgba(255,255,255,.03);transform:skewX(-15deg)}
+.mid-inner{position:relative;z-index:1}
+.mid-inner h2{font-family:var(--serif);font-size:clamp(22px,3.5vw,38px);font-weight:700;margin-bottom:14px}
+.mid-inner p{font-size:17px;opacity:.9;margin-bottom:34px;max-width:540px;margin-left:auto;margin-right:auto}
+
+/* ── AUTHOR ── */
+#author{position:relative;z-index:1;padding:110px 0}
+.author-grid{display:grid;grid-template-columns:1fr 2fr;gap:70px;align-items:center}
+.author-emblem{width:190px;height:190px;border:1px solid rgba(139,0,0,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;margin:0 auto}
+.author-emblem::before{content:'';position:absolute;inset:8px;border:1px solid rgba(139,0,0,.14);border-radius:50%}
+.author-emblem img{width:110px;height:auto}
+.author-content h2{font-family:var(--serif);font-size:clamp(24px,3.5vw,38px);font-weight:700;margin-bottom:20px}
+.author-content p{color:var(--gray-light);font-size:16px;line-height:1.9;margin-bottom:18px}
+.author-stats{display:flex;gap:40px;margin-top:34px}
+.stat-number{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--red-light);display:block}
+.stat-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gray)}
+
+/* ── TESTIMONIALS ── */
+#testimonials{position:relative;z-index:1;padding:110px 0;background:var(--black2);border-top:1px solid rgba(139,0,0,.1)}
+.test-header{text-align:center;margin-bottom:64px}
+.test-header h2{font-family:var(--serif);font-size:clamp(26px,4vw,44px);font-weight:700;margin-bottom:14px}
+.test-header p{color:var(--gray-light);font-size:16px;max-width:480px;margin:0 auto}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(139,0,0,.07)}
+.test-card{background:var(--black2);padding:34px 26px;position:relative;transition:background .3s ease}
+.test-card:hover{background:var(--black3)}
+.test-card.featured{background:rgba(139,0,0,.06);border-top:2px solid var(--red)}
+.test-card.full{grid-column:1/-1;background:rgba(20,5,5,.8);border-top:2px solid var(--red)}
+.test-card.full .test-text{max-width:680px;margin:0 auto;font-size:17px}
+.test-card.full .test-author{justify-content:center;margin-top:24px}
+.q-mark{font-family:var(--display);font-size:56px;line-height:.4;color:var(--red);opacity:.35;margin-bottom:18px;display:block}
+.stars{display:flex;gap:3px;margin-bottom:14px}
+.star{color:var(--red-light);font-size:13px}
+.test-text{font-size:15px;color:var(--white-muted);line-height:1.8;margin-bottom:22px;font-style:italic}
+.test-author{display:flex;align-items:center;gap:12px}
+.avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--black3));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:15px;color:var(--white);flex-shrink:0;border:1px solid rgba(139,0,0,.3)}
+.author-info strong{display:block;font-size:14px;font-weight:600;color:var(--white)}
+.author-info span{font-size:12px;color:var(--gray)}
+
+/* ── GUARANTEE ── */
+#guarantee{position:relative;z-index:1;padding:90px 0}
+.guarantee-box{max-width:660px;margin:0 auto;padding:58px 50px;border:1px solid rgba(139,0,0,.22);text-align:center;position:relative}
+.g-badge{width:82px;height:82px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 28px;box-shadow:var(--glow)}
+.guarantee-box h2{font-family:var(--serif);font-size:28px;margin-bottom:18px}
+.guarantee-box p{color:var(--gray-light);font-size:16px;line-height:1.8}
+
+/* ── FINAL CTA ── */
+#final-cta{position:relative;z-index:1;padding:120px 0;background:var(--black2);border-top:1px solid rgba(139,0,0,.14);text-align:center;overflow:hidden}
+#final-cta::before{content:'';position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:580px;height:580px;background:radial-gradient(circle,rgba(139,0,0,.12) 0%,transparent 70%)}
+.final-inner{position:relative;z-index:1}
+.final-inner h2{font-family:var(--serif);font-size:clamp(26px,4.5vw,52px);font-weight:900;line-height:1.15;margin-bottom:18px}
+.final-inner > p{color:var(--gray-light);font-size:17px;max-width:540px;margin:0 auto 46px;line-height:1.8}
+.countdown{display:flex;gap:18px;justify-content:center;margin-bottom:46px;flex-wrap:wrap;align-items:flex-end}
+.cd-block{text-align:center}
+.cd-number{font-family:var(--serif);font-size:50px;font-weight:900;color:var(--red-light);display:block;line-height:1;background:rgba(139,0,0,.1);padding:16px 18px;min-width:78px;border:1px solid rgba(139,0,0,.2)}
+.cd-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-top:7px;display:block}
+.cd-sep{font-family:var(--serif);font-size:42px;color:var(--red);opacity:.45;padding-bottom:32px}
+.final-price{margin-bottom:34px}
+.final-price .price-old{font-size:20px}
+.final-price .price-new{font-size:54px;display:block;margin-top:4px}
+.final-price .price-badge{margin-top:8px;display:inline-block}
+.urgency{font-size:13px;color:var(--gray);margin-top:20px;letter-spacing:.5px}
+
+/* ── FAQ ── */
+#faq{position:relative;z-index:1;padding:100px 0}
+.faq-header{text-align:center;margin-bottom:56px}
+.faq-header h2{font-family:var(--serif);font-size:clamp(24px,3.5vw,40px);font-weight:700}
+.faq-list{max-width:780px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.07)}
+.faq-q{width:100%;background:none;border:none;padding:22px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:var(--white);font-family:var(--sans);font-size:16px;font-weight:600;text-align:left;transition:color .3s ease;gap:16px}
+.faq-q:hover{color:var(--red-light)}
+.faq-icon{width:22px;height:22px;min-width:22px;border:1px solid rgba(139,0,0,.4);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--red-light);transition:transform .3s ease,background .3s ease}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--red);color:var(--white)}
+.faq-answer{overflow:hidden;max-height:0;transition:max-height .4s ease}
+.faq-answer-inner{padding:0 0 22px;color:var(--gray-light);font-size:15px;line-height:1.8}
+
+/* ── FOOTER ── */
+footer{position:relative;z-index:1;padding:48px 0;border-top:1px solid rgba(255,255,255,.06);background:var(--black)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+.footer-logo img{height:40px}
+.footer-legal{font-size:12px;color:var(--gray);text-align:center}
+.footer-links{display:flex;gap:22px}
+.footer-links a{font-size:12px;color:var(--gray);transition:color .3s ease}
+.footer-links a:hover{color:var(--red-light)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;text-align:center;gap:40px}
+  .hero-book{order:-1}
+  .hero-eyebrow,.hero-price{justify-content:center}
+  .hero-subtitle{margin:0 auto 34px}
+  .pillars,.pain-grid{grid-template-columns:1fr}
+  .learn-grid{grid-template-columns:1fr;gap:50px}
+  .learn-side{position:static;flex-direction:row;flex-wrap:wrap;justify-content:center}
+  .learn-cta-box{max-width:400px}
+  .author-grid{grid-template-columns:1fr;text-align:center}
+  .author-stats{justify-content:center}
+  .test-grid{grid-template-columns:1fr}
+  .test-card.full{grid-column:1}
+  .guarantee-box{padding:40px 24px}
+}
+@media(max-width:600px){
+  .btn-red.btn-lg{padding:18px 28px;font-size:12px;letter-spacing:2px}
+  .price-new{font-size:42px}
+  .final-price .price-new{font-size:44px}
+  .cd-number{font-size:36px;padding:12px 14px;min-width:62px}
+  .author-stats{flex-wrap:wrap;gap:24px}
+}
+</style>
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo"><img src="Logo.png" alt="Seducción Empírica"></a>
+      <a href="https://pay.hotmart.com/E105686112X" class="btn btn-red nav-cta">Obtener por $28</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Seducción Empírica</div>
+        <h1 class="hero-title serif">Lo Que Los Hombres Deseados<br>Entienden Y Los Demás Ignoran<br><em>La Psicología Prohibida<br>De La Atracción Femenina</em></h1>
+        <p class="hero-subtitle">La guía definitiva sobre la mente femenina. Biología, psicología y neurociencia aplicadas. No son trucos. No es magia. Es ciencia.</p>
+        <div class="hero-price">
+          <span class="price-old">$97 USD</span>
+          <span class="price-new">$28</span>
+          <span class="price-badge">Oferta Limitada</span>
+        </div>
+        <div class="hero-btn">
+          <a href="https://pay.hotmart.com/E105686112X" class="btn btn-red btn-lg">QUIERO ACCEDER AHORA →</a>
+        </div>
+        <p class="hero-guarantee"><span>✓ Acceso inmediato</span> &nbsp;|&nbsp; <span>✓ Garantía 7 días</span> &nbsp;|&nbsp; <span>✓ Pago seguro</span></p>
+      </div>
+      <div class="hero-book">
+        <div class="book-wrapper">
+          <img src="Portada.png" alt="Psicología Oscura de la Seducción Masculina">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="container">
+    <div class="problem-intro reveal">
+      <span class="section-label">El Problema Real</span>
+      <h2 class="serif">¿Por Qué Sigues Fallando<br>Aunque Haces Todo Bien?</h2>
+      <div class="divider center"></div>
+      <p>Te esfuerzas. Eres atento. Eres detallista. Haces exactamente lo que te enseñaron. Y sin embargo, los resultados no llegan. No es casualidad. Nadie te enseñó cómo funciona la atracción realmente.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-item reveal">
+        <div class="pain-icon">🔁</div>
+        <h3>El Ciclo de la Frustración</h3>
+        <p>Conoces a alguien que te gusta, haces todo "bien"... y terminas en la zona de amigos. Una y otra vez, sin entender por qué.</p>
+      </div>
+      <div class="pain-item reveal">
+        <div class="pain-icon">🤔</div>
+        <h3>Las Reglas No Escritas</h3>
+        <p>La atracción tiene reglas que nadie enseña abiertamente. Reglas biológicas, evolutivas, psicológicas. Y tú las desconoces.</p>
+      </div>
+      <div class="pain-item reveal">
+        <div class="pain-icon">💬</div>
+        <h3>El Consejo Equivocado</h3>
+        <p>"Sé tú mismo", "trátala bien", "sé romántico." Consejos que ignoran por completo la ciencia real de la atracción.</p>
+      </div>
+      <div class="pain-item reveal">
+        <div class="pain-icon">📉</div>
+        <h3>La Paradoja del Buen Tipo</h3>
+        <p>Cuanto más te esfuerzas por agradar, menos atracción generas. Existe una razón biológica para esto. Tiene solución.</p>
+      </div>
+      <div class="pain-item reveal">
+        <div class="pain-icon">🧩</div>
+        <h3>La Pieza Faltante</h3>
+        <p>No es tu apariencia. No es tu dinero. Es el entendimiento profundo de cómo funciona la mente femenina.</p>
+      </div>
+      <div class="pain-item reveal">
+        <div class="pain-icon">⏳</div>
+        <h3>El Tiempo que Pierdes</h3>
+        <p>Cada día sin este conocimiento es un día de oportunidades desaprovechadas. El conocimiento es la diferencia.</p>
+      </div>
+    </div>
+    <div class="problem-quote reveal">
+      <p>La verdad que nadie te dirá: <strong>la atracción no es un misterio.</strong> Es biología. Es psicología. Es ciencia. Y cuando la entiendes, todo cambia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution">
+  <div class="container">
+    <div class="solution-header reveal">
+      <span class="section-label">La Solución</span>
+      <h2 class="serif">Un Marco Científico<br>Para Entender la Atracción</h2>
+      <div class="divider center"></div>
+      <p>No son trucos ni frases ingeniosas. Es una guía fundamentada en tres ciencias que te dan el mapa completo de la mente femenina.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="pillar-number">01</span>
+        <div class="pillar-icon">🧬</div>
+        <span class="pillar-tag">Pilar I</span>
+        <h3>Biológico</h3>
+        <p>El cerebro femenino está cableado por millones de años de evolución para evaluar y seleccionar. Entender estos mecanismos es entender la atracción en su nivel más profundo.</p>
+        <ul class="pillar-points">
+          <li>Hormonas y su papel en el deseo</li>
+          <li>Instintos evolutivos de selección</li>
+          <li>El rol del sistema límbico</li>
+          <li>Biología de la confianza y el liderazgo</li>
+        </ul>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-number">02</span>
+        <div class="pillar-icon">🧠</div>
+        <span class="pillar-tag">Pilar II</span>
+        <h3>Psicológico</h3>
+        <p>Los patrones de pensamiento femeninos, los sesgos cognitivos y los gatillos emocionales que determinan si una mujer siente atracción hacia ti.</p>
+        <ul class="pillar-points">
+          <li>Sesgos de percepción de valor</li>
+          <li>Gatillos emocionales de conexión</li>
+          <li>La psicología de la escasez</li>
+          <li>Apego, ansiedad y deseo</li>
+        </ul>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-number">03</span>
+        <div class="pillar-icon">🔬</div>
+        <span class="pillar-tag">Pilar III</span>
+        <h3>Científico</h3>
+        <p>Estudios reales sobre comportamiento, proxémica, lenguaje corporal y psicología social aplicados a la dinámica de la atracción masculina.</p>
+        <ul class="pillar-points">
+          <li>Proxémica y lenguaje corporal</li>
+          <li>Estudios de psicología social</li>
+          <li>Neurociencia del deseo</li>
+          <li>Comportamiento no verbal</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARN -->
+<section id="learn">
+  <div class="container">
+    <div class="learn-grid">
+      <div class="learn-text">
+        <div class="learn-header reveal-left">
+          <span class="section-label">Dentro del Libro</span>
+          <h2 class="serif">Lo Que Aprenderás</h2>
+          <div class="divider"></div>
+          <p>Conocimiento estructurado y aplicable desde el primer capítulo. Sin filosofía vacía. Sin consejos genéricos.</p>
+        </div>
+        <ul class="benefits-list">
+          <li class="reveal-left"><span class="bcheck">✓</span><span>Cómo el cerebro femenino evalúa la atracción en los primeros segundos — y qué factores realmente determinan el resultado</span></li>
+          <li class="reveal-left"><span class="bcheck">✓</span><span>La diferencia entre lo que las mujeres dicen querer y lo que su biología selecciona inconscientemente</span></li>
+          <li class="reveal-left"><span class="bcheck">✓</span><span>Los 3 gatillos neurológicos del deseo que la mayoría de hombres jamás activa</span></li>
+          <li class="reveal-left"><span class="bcheck">✓</span><span>Por qué el hombre que "hace todo bien" es el que menos atrae — y la solución exacta a esta paradoja</span></li>
+          <li class="reveal-left"><span class="bcheck">✓</span><span>El papel de la dopamina, oxitocina y cortisol en las decisiones de pareja femeninas</span></li>
+          <li class="reveal-left"><span class="bcheck">✓</span><span>Cómo tu lenguaje corporal comunica valor antes de que pronuncies una sola palabra</span></li>
+          <li class="reveal-left"><span class="bcheck">✓</span><span>La psicología de la polaridad y cómo crear tensión magnética genuina sin forzar nada</span></li>
+          <li class="reveal-left"><span class="bcheck">✓</span><span>Cómo crear conexión profunda y real sin perder tu identidad ni tu posición</span></li>
+          <li class="reveal-left"><span class="bcheck">✓</span><span>Los errores de comunicación que destruyen la atracción sin que te des cuenta</span></li>
+          <li class="reveal-left"><span class="bcheck">✓</span><span>La diferencia entre seducción y manipulación — y por qué este libro enseña solo la primera</span></li>
+        </ul>
+      </div>
+      <div class="learn-side reveal-right">
+        <img src="Portada.png" alt="Libro Psicología Oscura de la Seducción Masculina">
+        <div class="learn-cta-box">
+          <span class="price-old">Antes: $97 USD</span>
+          <span class="price-new">$28 USD</span>
+          <span class="price-badge" style="display:inline-block;margin-bottom:16px">Por Tiempo Limitado</span>
+          <a href="https://pay.hotmart.com/E105686112X" class="btn btn-red" style="display:block;text-align:center;margin-bottom:10px">ACCEDER AHORA →</a>
+          <small>✓ Acceso inmediato &nbsp; ✓ Garantía 7 días</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<section id="mid-cta">
+  <div class="container">
+    <div class="mid-inner">
+      <h2 class="serif">¿Listo Para Entender Lo Que Siempre Quisiste Entender?</h2>
+      <p>Miles de hombres ya tienen este conocimiento. Tú puedes tenerlo hoy, en minutos, por menos del precio de una cena.</p>
+      <a href="https://pay.hotmart.com/E105686112X" class="btn btn-white btn-lg">QUIERO EL LIBRO AHORA — $28 →</a>
+      <p style="margin-top:14px;font-size:13px;opacity:.75">✓ Precio especial activo por tiempo limitado</p>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section id="author">
+  <div class="container">
+    <div class="author-grid">
+      <div class="reveal-left">
+        <div class="author-emblem">
+          <img src="Logo.png" alt="Seducción Empírica">
+        </div>
+      </div>
+      <div class="reveal-right">
+        <span class="section-label">El Autor</span>
+        <h2 class="serif">Conocimiento Forjado<br>en la Experiencia Real</h2>
+        <div class="divider"></div>
+        <p>El autor de <em>Psicología Oscura de la Seducción Masculina</em> es un investigador del comportamiento humano con más de una década estudiando la intersección entre biología evolutiva, neurociencia y dinámica de atracción.</p>
+        <p>Su enfoque no proviene del mundo de la autoayuda superficial. Proviene del rigor académico aplicado a la experiencia real: años observando, analizando y documentando los principios que rigen la atracción entre hombres y mujeres.</p>
+        <p>Después de ayudar a cientos de hombres a transformar su vida romántica con principios respaldados por evidencia, decidió compilar todo en un volumen definitivo.</p>
+        <div class="author-stats">
+          <div><span class="stat-number">10+</span><span class="stat-label">Años de Investigación</span></div>
+          <div><span class="stat-number">500+</span><span class="stat-label">Hombres Ayudados</span></div>
+          <div><span class="stat-number">3</span><span class="stat-label">Ciencias Aplicadas</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="test-header reveal">
+      <span class="section-label">Testimonios</span>
+      <h2 class="serif">Lo Que Dicen Los Que Ya Lo Leyeron</h2>
+      <div class="divider center"></div>
+      <p>Hombres reales. Resultados reales. Edades distintas, misma transformación.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card featured reveal">
+        <span class="q-mark">"</span>
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="test-text">Llevaba años creyendo que no era suficientemente guapo o exitoso. Este libro me hizo entender que la atracción no funciona como nos enseñaron. Ahora sé exactamente qué activa el interés en una mujer y por qué. Mis citas cambiaron radicalmente en menos de un mes.</p>
+        <div class="test-author"><div class="avatar">C</div><div class="author-info"><strong>Carlos M.</strong><span>23 años · Ciudad de México</span></div></div>
+      </div>
+      <div class="test-card reveal">
+        <span class="q-mark">"</span>
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="test-text">Salí de una relación de 6 años sin entender qué había salido mal. Este libro me abrió los ojos. No son trucos: es entender la biología real. Ahora conecto de una manera completamente diferente.</p>
+        <div class="test-author"><div class="avatar">A</div><div class="author-info"><strong>Alejandro R.</strong><span>31 años · Monterrey</span></div></div>
+      </div>
+      <div class="test-card reveal">
+        <span class="q-mark">"</span>
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="test-text">Siempre fui el "mejor amigo". Me frustraba no entender por qué las chicas me elegían para confiarme todo pero no para salir. Después de leer esto entendí el error fundamental. Ya no lo cometo.</p>
+        <div class="test-author"><div class="avatar">S</div><div class="author-info"><strong>Sebastián V.</strong><span>19 años · Guadalajara</span></div></div>
+      </div>
+      <div class="test-card reveal">
+        <span class="q-mark">"</span>
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="test-text">Después de mi divorcio pensé que había perdido el tren de las relaciones. Este libro me demostró que la atracción tiene bases biológicas que no cambian con la edad. A los 45 estoy conociendo personas increíbles con una confianza que nunca tuve.</p>
+        <div class="test-author"><div class="avatar">M</div><div class="author-info"><strong>Miguel A.</strong><span>45 años · Bogotá</span></div></div>
+      </div>
+      <div class="test-card reveal">
+        <span class="q-mark">"</span>
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="test-text">Era de los que hacían todo bien: citas perfectas, detalles, mensajes... sin resultados. La sección sobre psicología femenina me explicó exactamente por qué. Ojalá lo hubiera leído a los 18. Lo recomiendo a todo hombre.</p>
+        <div class="test-author"><div class="avatar">R</div><div class="author-info"><strong>Rodrigo T.</strong><span>28 años · Buenos Aires</span></div></div>
+      </div>
+      <div class="test-card reveal">
+        <span class="q-mark">"</span>
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="test-text">Soy ejecutivo con éxito profesional, pero nunca entendí las relaciones. Creía que era un área donde simplemente "no tenía suerte". Estaba equivocado. La suerte no existe; existen los principios.</p>
+        <div class="test-author"><div class="avatar">F</div><div class="author-info"><strong>Fernando L.</strong><span>50 años · Madrid</span></div></div>
+      </div>
+      <div class="test-card full reveal">
+        <span class="q-mark">"</span>
+        <div class="stars" style="justify-content:center"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="test-text">Lo que más me impresionó es la base científica. No son consejos de autoayuda vacíos: cita estudios reales, explica la neurociencia del deseo y la biología evolutiva con claridad. Es un libro serio para hombres que quieren resultados reales.</p>
+        <div class="test-author"><div class="avatar">D</div><div class="author-info"><strong>Diego N.</strong><span>38 años · Lima</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section id="guarantee">
+  <div class="container">
+    <div class="guarantee-box reveal">
+      <div class="g-badge">🛡</div>
+      <span class="section-label" style="display:block;text-align:center">Riesgo Cero</span>
+      <h2 class="serif">Garantía Total de 7 Días</h2>
+      <div class="divider center"></div>
+      <p>Si lees el libro en los próximos 7 días y no sientes que cambió algo en la forma en que entiendes la atracción femenina, te devolvemos cada centavo. Sin formularios. Sin preguntas. Sin excusas.</p>
+      <p style="margin-top:14px;color:var(--gray)">Así de seguros estamos de lo que encontrarás dentro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="final-cta">
+  <div class="container">
+    <div class="final-inner">
+      <span class="section-label">Última Oportunidad</span>
+      <h2 class="serif">Esta Oferta<br>No Durará Para Siempre</h2>
+      <p>El precio de $28 es temporal. Cuando se acabe el tiempo, el libro vuelve a su valor de $97. Cada minuto que pasa es un minuto que otro hombre tiene este conocimiento y tú no.</p>
+      <div class="countdown">
+        <div class="cd-block"><span class="cd-number" id="cd-h">00</span><span class="cd-label">Horas</span></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-block"><span class="cd-number" id="cd-m">00</span><span class="cd-label">Minutos</span></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-block"><span class="cd-number" id="cd-s">00</span><span class="cd-label">Segundos</span></div>
+      </div>
+      <div class="final-price">
+        <span class="price-old">Precio normal: $97 USD</span>
+        <span class="price-new">$28 USD</span><br>
+        <span class="price-badge">Oferta por Tiempo Limitado</span>
+      </div>
+      <a href="https://pay.hotmart.com/E105686112X" class="btn btn-red btn-lg">SÍ, QUIERO ACCEDER AHORA POR $28 →</a>
+      <p class="urgency">✓ Acceso digital inmediato &nbsp;·&nbsp; ✓ Garantía de 7 días &nbsp;·&nbsp; ✓ Pago 100% seguro</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-header reveal">
+      <span class="section-label">Preguntas Frecuentes</span>
+      <h2 class="serif">Resolvemos Tus Dudas</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">¿Esto es manipulación?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">No. Este libro enseña a entender la psicología femenina para conectar de manera más auténtica y efectiva. La manipulación se basa en el engaño; el conocimiento en este libro se basa en la comprensión genuina. La diferencia está en la intención: construir conexiones reales.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Funciona para cualquier edad?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Sí. Los principios biológicos y psicológicos que aprenderás no dependen de la edad. La biología evolutiva y la neurociencia aplican a todos los hombres. Contamos con lectores de 19 a 55 años que reportan transformaciones significativas.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Es físico o digital?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Es un libro digital que recibirás de forma inmediata después de tu compra. Puedes leerlo en cualquier dispositivo: teléfono, tablet, computadora. Sin esperas. Acceso al instante.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Qué pasa si no me funciona?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Tienes 7 días de garantía completa. Si lees el libro y sientes que no aportó nada, te devolvemos tu inversión al 100%, sin preguntas y sin complicaciones. Es una apuesta sin riesgo de tu parte.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Cuánto tarda en verse resultados?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">El conocimiento lo adquieres desde el primer capítulo. Algunos lectores reportan cambios en la primera semana de aplicar los principios. La comprensión intelectual es inmediata; los resultados dependen de tu práctica y contexto.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Cuánto tiempo dura el precio de $28?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">No podemos garantizarlo más allá del tiempo que muestra el contador en esta página. Cuando termine la oferta, el precio regresa a $97. Si el contador sigue activo, el precio de $28 sigue vigente.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="Logo.png" alt="Seducción Empírica"></div>
+      <div class="footer-legal">
+        <p>© 2026 Seducción Empírica. Todos los derechos reservados.</p>
+        <p style="margin-top:5px;font-size:11px;color:#555">Los testimonios representan experiencias individuales. Los resultados pueden variar.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://pay.hotmart.com/E105686112X">Comprar</a>
+        <a href="#faq">FAQ</a>
+        <a href="#guarantee">Garantía</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+function safe(fn,name){try{fn();}catch(e){console.warn('[SE]',name,e.message);}}
+
+/* ── PARTICLES ── */
+function initParticles(){
+  var c=document.getElementById('particles-canvas');
+  if(!c)return;
+  var ctx=c.getContext('2d');
+  var W,H,particles=[];
+  function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight;}
+  resize();
+  window.addEventListener('resize',resize);
+  function P(){this.reset();}
+  P.prototype.reset=function(){
+    this.x=Math.random()*W;this.y=Math.random()*H;
+    this.r=Math.random()*1.4+0.3;
+    this.vx=(Math.random()-.5)*.25;this.vy=(Math.random()-.5)*.25;
+    this.life=0;this.max=Math.random()*260+140;
+    var rnd=Math.random();
+    this.color=rnd<.18?'rgba(139,0,0,':'rgba(255,255,255,';
+    this.baseAlpha=rnd<.18?Math.random()*.55+.2:Math.random()*.25+.04;
+  };
+  P.prototype.update=function(){
+    this.x+=this.vx;this.y+=this.vy;this.life++;
+    if(this.life>this.max||this.x<0||this.x>W||this.y<0||this.y>H)this.reset();
+  };
+  P.prototype.draw=function(){
+    var a=Math.sin(this.life/this.max*Math.PI)*this.baseAlpha;
+    ctx.save();ctx.globalAlpha=a;
+    ctx.fillStyle=this.color+a+')';
+    ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+  };
+  for(var i=0;i<90;i++){var p=new P();p.life=Math.floor(Math.random()*p.max);particles.push(p);}
+  function animate(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(function(p){p.update();p.draw();});
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+/* ── NAV ── */
+function initNav(){
+  var nav=document.getElementById('main-nav');
+  if(!nav)return;
+  window.addEventListener('scroll',function(){
+    nav.classList[window.scrollY>80?'add':'remove']('scrolled');
+  },{passive:true});
+}
+
+/* ── REVEAL ── */
+function initReveal(){
+  var els=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+  var timer=setTimeout(function(){els.forEach(function(el){el.classList.add('visible');});},6000);
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.classList.add('visible');});
+    clearTimeout(timer);return;
+  }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+    });
+  },{threshold:0.05});
+  els.forEach(function(el,i){
+    el.style.transitionDelay=(i%4*.08)+'s';
+    obs.observe(el);
+  });
+}
+
+/* ── COUNTDOWN ── */
+function initCountdown(){
+  var KEY='se_end_v2';
+  var DUR=72*60*60*1000;
+  var end=localStorage.getItem(KEY);
+  if(!end||isNaN(+end)||Date.now()>+end){
+    end=Date.now()+DUR;
+    localStorage.setItem(KEY,end);
+  }
+  end=+end;
+  var elH=document.getElementById('cd-h');
+  var elM=document.getElementById('cd-m');
+  var elS=document.getElementById('cd-s');
+  if(!elH)return;
+  function pad(n){return n<10?'0'+n:''+n;}
+  function tick(){
+    var diff=Math.max(0,end-Date.now());
+    var tot=Math.floor(diff/1000);
+    elH.textContent=pad(Math.floor(tot/3600));
+    elM.textContent=pad(Math.floor((tot%3600)/60));
+    elS.textContent=pad(tot%60);
+    if(diff>0)setTimeout(tick,1000);
+  }
+  tick();
+}
+
+/* ── FAQ ── */
+function initFaq(){
+  var items=document.querySelectorAll('.faq-item');
+  items.forEach(function(item){
+    var btn=item.querySelector('.faq-q');
+    var ans=item.querySelector('.faq-answer');
+    if(!btn||!ans)return;
+    btn.addEventListener('click',function(){
+      var open=item.classList.contains('open');
+      items.forEach(function(it){
+        it.classList.remove('open');
+        var a=it.querySelector('.faq-answer');
+        if(a)a.style.maxHeight='0';
+      });
+      if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+    });
+  });
+}
+
+/* ── BOOK PARALLAX ── */
+function initParallax(){
+  var img=document.querySelector('.book-wrapper img');
+  if(!img)return;
+  var base='perspective(900px) rotateY(-7deg) rotateX(2deg)';
+  window.addEventListener('scroll',function(){
+    var sy=window.scrollY;
+    if(sy<window.innerHeight){
+      img.style.transform=base+' translateY('+sy*.04+'px)';
+    }
+  },{passive:true});
+}
+
+/* ── BOOT ── */
+function init(){
+  safe(initParticles,'particles');
+  safe(initNav,'nav');
+  safe(initReveal,'reveal');
+  safe(initCountdown,'countdown');
+  safe(initFaq,'faq');
+  safe(initParallax,'parallax');
+}
+
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}
+else{init();}
+
+})();
+</script>
+</body>
+</html>
